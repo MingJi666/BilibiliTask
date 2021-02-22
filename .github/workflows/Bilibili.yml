@@ -6,12 +6,14 @@
 name: Bilibili
 
 on:
-   push:
-     branches: main
-   gollum:
-   workflow_dispatch:
-   schedule:
-       - cron: '30 2 * * *'
+  push:	
+    branches: [ master ]	
+  pull_request:	
+    branches: [ master ]	
+  schedule:
+    - cron: "0 23,0 * * *"
+  watch:
+    types: started
 
 jobs:
   start:
